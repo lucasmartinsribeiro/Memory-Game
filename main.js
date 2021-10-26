@@ -3,9 +3,15 @@ import "./src/styles/generic/reset.css";
 import "./src/styles/elements/base.css";
 
 import BoardGame from './src/objects/BoardGame';
+import PlayerName from './src/components/PlayerName';
 
 const $app = document.querySelector("#app");
 
-const $htmlBoardGame = BoardGame(6);
-
-$app.insertAdjacentHTML("beforeend", $htmlBoardGame);
+$app.insertAdjacentHTML(
+    "beforeend",
+    `
+        ${PlayerName("Player1")}
+        ${PlayerName("Player2")}
+        ${BoardGame(6)}
+    `
+);
